@@ -4,7 +4,7 @@ A simple selfbot written in JavaScript using the Discord.JS library running in N
 
 # Installation
 ## Prerequisites
-1.[Node.JS](https://nodejs.org)
+1. [Node.JS](https://nodejs.org)
 2. Your Discord Token and UserID
 3. Put your Cookie in config.json -> "token": "<token here>", same with your ID (config.json -> "userId": "<id here>")
 
