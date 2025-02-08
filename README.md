@@ -22,17 +22,15 @@ Make .js files in `/commands/CATEGORY/` and use `TEMPLATE.j` to see the basic te
 
 Discord is trademark of Discord Inc. and solely mentioned for the sake of descriptivity.
 Mentioning it does not imply any affiliation with or endorsement by Discord Inc.
-Vencord is not connected to Equicord and as such, all donation links go to Vendicated's donation link.
-
 <details>
-<summary>Using Equicord violates Discord's terms of service</summary>
+<summary>Using a selfbot violates Discord's terms of service</summary>
 
-Client modifications are against Discord’s Terms of Service.
+Selfbots are against Discord’s Terms of Service.
 
-However, Discord is pretty indifferent about them and there are no known cases of users getting banned for using client mods! So you should generally be fine if you don’t use plugins that implement abusive behaviour. But no worries, all inbuilt plugins are safe to use!
+However, Discord is pretty indifferent about them and there are no known cases of users getting banned for using selfbots! So you should generally be fine if you don’t use plugins that implement abusive behaviour. But no worries, all inbuilt commands are safe to use!
 
-Regardless, if your account is essential to you and getting disabled would be a disaster for you, you should probably not use any client mods (not exclusive to Equicord), just to be safe
+Regardless, if your account is essential to you and getting disabled would be a disaster for you, you should probably not use this, just to be safe
 
-Additionally, make sure not to post screenshots with Equicord in a server where you might get banned for it
+Additionally, make sure not to use the selfbot in a server where you might get banned for it
 
 </details>
