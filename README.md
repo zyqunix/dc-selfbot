@@ -20,7 +20,7 @@ A simple selfbot written in JavaScript using the Discord.JS library running in N
 - `BackgroundKill.vbs` is for Windows to KILL the Node.JS window/instance run in the background
 
 # Custom Commands
-Make .js files in `/commands/CATEGORY/` and use `TEMPLATE.j` to see the basic template
+Make .js files in `/commands/<CATEGORY>/` and use `TEMPLATE.j` to see the basic template
 
 
 ## Disclaimer
