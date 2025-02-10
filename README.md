@@ -39,3 +39,6 @@ Regardless, if your account is essential to you and getting disabled would be a 
 Additionally, make sure not to use the selfbot in a server where you might get banned for it
 
 </details>
+
+
+`SPDX-License-Identifier: MIT`
