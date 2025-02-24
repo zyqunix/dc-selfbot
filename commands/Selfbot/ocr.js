@@ -10,20 +10,16 @@ module.exports = {
             const imageUrl = attachment.url;
 
             try {
-                // Fetch the image
                 const response = await fetch(imageUrl);
                 if (!response.ok) throw new Error('Failed to fetch image');
 
-                // Get the image buffer
                 const buffer = await response.buffer();
 
-                // Perform OCR directly from the buffer
                 const { data: { text } } = await Tesseract.recognize(
                     buffer,
-                    'eng', // Language
+                    'eng',
                 );
 
-                // Send the result
                 message.edit(`OCR Result:\n\`\`\`\n${text}\n\`\`\``);
             } catch (error) {
                 message.edit(`An error occurred: ${error.message}`);
