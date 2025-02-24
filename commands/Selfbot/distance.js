@@ -7,10 +7,8 @@ module.exports = {
         const units = ['ft', 'in', 'cm', 'mi', 'yd', 'km', 'm', 'mm'];
         const input = args.join('').toLowerCase();
 
-        // Declare result at the beginning
         let result = '';
 
-        // Regex to capture feet and inches format like "5'6ft"
         const feetInchesMatch = input.match(/(\d+)'(\d+)/);
 
         if (feetInchesMatch) {
