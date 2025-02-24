@@ -10,7 +10,6 @@ module.exports = {
         const url = `https://ipinfo.io/${ip}/json`;
 
         try {
-            // Dynamically import fetch
             const { default: fetch } = await import('node-fetch');
             
             const response = await fetch(url);
