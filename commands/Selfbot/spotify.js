@@ -34,7 +34,6 @@ module.exports = {
                     }],
                 });
 
-                // Delete the temporary file
                 await unlinkAsync(outputFile);
             } catch (err) {
                 console.error(`Error reading or sending file: ${err.message}`);
