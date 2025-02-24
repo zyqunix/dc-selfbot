@@ -36,7 +36,6 @@ ${definition.example}
 
       const initialMessage = await message.edit(sendDefinition(currentIndex));
 
-      // Set up a message collector for "next"
       const filter = (m) => m.author.id === message.author.id && m.content.toLowerCase() === 'next';
       const collector = message.channel.createMessageCollector({ filter, time: 60000 });
 
