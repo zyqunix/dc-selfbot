@@ -5,15 +5,12 @@ module.exports = {
     name: 'resize',
     description: 'Resize an image',
     execute(message, args) {
-        // Check if the message has an attachment
         if (!message.attachments.size) {
             return message.edit('Please attach an image to resize!');
         }
 
-        // Get the attachment
         const attachment = message.attachments.first();
 
-        // Check if the attachment is an image
         if (!attachment.name.endsWith('.png') && !attachment.name.endsWith('.jpg') && !attachment.name.endsWith('.gif')) {
             return message.edit('Only PNG, JPG, and GIF images are supported!');
         }
