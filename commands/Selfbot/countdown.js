@@ -14,7 +14,6 @@ module.exports = {
 
         const countdownMessage = args.slice(1).join(' ') || 'Countdown';
 
-        // Send the initial countdown message
         const countdownMessageObject = await message.edit(`${countdownMessage} in ${seconds} seconds...`);
 
         const interval = setInterval(async () => {
