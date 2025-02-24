@@ -46,7 +46,6 @@ function convertTime(value, unit) {
     }
 }
 
-// Conversion functions for time units
 function convertMsToS(milliseconds) { return milliseconds / 1000; }
 function convertMsToMin(milliseconds) { return milliseconds / 60000; }
 function convertMsToH(milliseconds) { return milliseconds / 3600000; }
