@@ -2,7 +2,6 @@ module.exports = {
     name: 'dog',
     description: 'Sends Random Dog Image',
     async execute(message, args) {
-        // Dynamically import fetch
         const { default: fetch } = await import('node-fetch');
 
         try {
