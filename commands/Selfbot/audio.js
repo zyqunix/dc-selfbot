@@ -44,7 +44,6 @@ module.exports = {
           console.error('API error:', responseBody.error);
           message.edit(`Error: ${responseBody.error.code}`);
         } else if (responseBody.status === 'picker') {
-          // Handle multiple media options
           const options = responseBody.picker.map(item => item.url).join('\n');
           message.edit(`Multiple audio options available:\n${options}`);
         } else {
