@@ -2,11 +2,10 @@ module.exports = {
     name: 'math',
     description: 'Solves math problems',
     execute(message, args) {
-        const mathExpression = args.join(''); // Join all arguments to form the math expression
-        const regexArithmetic = /(-?\d+\.?\d*)([+\-*\/%x]?)(-?\d+\.?\d*)/; // Regex for arithmetic operators (+, -, *, /, %, x)
-        const regexFactorial = /(-?\d+\.?\d*)!/; // Regex for factorial operator (!)
+        const mathExpression = args.join('');
+        const regexArithmetic = /(-?\d+\.?\d*)([+\-*\/%x]?)(-?\d+\.?\d*)/; 
+        const regexFactorial = /(-?\d+\.?\d*)!/; 
 
-        // Check for factorial expression
         const matchFactorial = mathExpression.match(regexFactorial);
         if (matchFactorial) {
             const num1 = parseFloat(matchFactorial[1]);
@@ -16,7 +15,6 @@ module.exports = {
             }
             const factorialResult = calculateFactorial(num1);
 
-            // Check for an optional operator and num2
             const remainingExpression = mathExpression.slice(matchFactorial[0].length);
             const matchOptionalOperator = remainingExpression.match(/([+\-*\/%x])(-?\d+\.?\d*)/);
             if (matchOptionalOperator) {
@@ -56,7 +54,6 @@ module.exports = {
                 message.edit(`Factorial of ${num1} is: \`${factorialResult}\``);
             }
         } else {
-            // Check for arithmetic expression
             const matchArithmetic = mathExpression.match(regexArithmetic);
             if (matchArithmetic) {
                 const num1 = parseFloat(matchArithmetic[1]);
