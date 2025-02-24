@@ -11,7 +11,6 @@ module.exports = {
         const username = args[0];
 
         try {
-            // Get user ID from the username
             const userId = await noblox.getIdFromUsername(username);
             
             if (!userId) {
@@ -22,7 +21,6 @@ module.exports = {
 
             const terminatedStatus = userInfo.isBanned ? 'Yes' : 'No';
 
-            // Prepare the message with fetched data
             const userInfoMessage = `
 \`\`\`
 Username:       ${userInfo.username}
