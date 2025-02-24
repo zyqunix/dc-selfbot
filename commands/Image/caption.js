@@ -6,29 +6,23 @@ module.exports = {
   name: 'caption',
   description: 'Adds a caption to the first image in the message attachments.',
   execute(message, args) {
-    // Check if the message has attachments
     if (!message.attachments.size) {
       return message.edit('Please attach an image to the message.');
     }
 
-    // Ensure the attachment is an image
     const attachment = message.attachments.first();
     if (!attachment.contentType.startsWith('image')) {
       return message.edit('The attachment is not an image.');
     }
 
-    // Define the caption text
     const captionText = args.join(' ');
 
-    // Check if a caption was provided
     if (!captionText) {
       return message.edit('Please provide a caption.');
     }
 
-    // Download the attachment
     axios.get(attachment.url, { responseType: 'arraybuffer' })
     .then(response => {
-        // Process the image with Sharp
         sharp(response.data)
         .composite([
             {
@@ -49,7 +43,6 @@ module.exports = {
               return;
             }
 
-            // Send the image back
             message.edit({
               files: [{
                 attachment: buffer,
