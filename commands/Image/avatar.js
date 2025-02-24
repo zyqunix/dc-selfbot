@@ -2,7 +2,6 @@ module.exports = {
     name: 'av',
     description: 'Displays the avatar of the specified user by their ID.',
     execute(message, args, client) {
-        // Check if there is exactly one argument (the user ID)
         if (args.length !== 1) {
             return message.edit('Please provide the user ID to get their avatar.').catch(console.error);
         }
@@ -10,7 +9,6 @@ module.exports = {
         const userID = args[0];
         const mentionedUser = client.users.cache.get(userID);
         
-        // Check if the user exists
         if (!mentionedUser) {
             return message.edit('User not found.').catch(console.error);
         }
