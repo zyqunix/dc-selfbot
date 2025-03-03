@@ -1,5 +1,5 @@
 # Discord.JS Selfbot
-A simple selfbot written in JavaScript using the Discord.JS library running in Node.JS.
+A simple selfbot written in JavaScript using the Discord.JS v13 library running in Node.JS.
 
 
 # Installation
