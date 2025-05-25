@@ -9,7 +9,6 @@ const requireStartWith = "https://www.instagram.com/reels/";
 module.exports = {
     name: "igr",
     description: "Repost an Instagram reel",
-    type: "selfbot",
     async execute(message, args) {
         let url = args[0];
         if (!url.includes("://www.")) {
@@ -70,7 +69,21 @@ module.exports = {
         const videoUrl = media.video_versions[0].url;
         const code = media.code;
         const caption = media.caption?.text || "No caption";
-        const filename = `${code}.mp4`;
+
+        let headRes;
+        try {
+            headRes = await axios.head(videoUrl);
+        } catch (e) {
+            return message.edit("Failed to retrieve video size.");
+        }
+
+        const contentLength = parseInt(headRes.headers["content-length"] || "0");
+        const maxSize = 10 * 1024 * 1024;
+
+        if (contentLength > maxSize) {
+            await message.channel.send({ content: `${caption}\n[Link](${videoUrl})` });
+            return message.delete();
+        }
 
         let fileData;
         try {
@@ -80,12 +93,13 @@ module.exports = {
             return message.edit("Failed to download video.");
         }
 
+        const filename = `${code}.mp4`;
         fs.writeFileSync(filename, fileData);
-        message.channel.send({ files: [filename], content: caption });
-		
-		setTimeout(() => {
-			message.delete();
-			fs.unlinkSync(filename);
-		}, 5000)
+        await message.channel.send({ files: [filename], content: caption });
+
+        setTimeout(() => {
+            message.delete();
+            fs.unlinkSync(filename);
+        }, 5000);
     }
 };
